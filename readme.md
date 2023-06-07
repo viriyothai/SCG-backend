@@ -29,7 +29,7 @@ keyword: string # keyword to search by name of the restaurants
 
 ## Limitation
 
-> The Google Map API can return up to 20 results with next page token if there are more than 20 results. Therefore, the developer need to use next page token to get 20 more results (with another next page token if possible). The issue is the short delay before the developer can send a new request to the API. So, it might take some seconds for searching new restaurants list.
+> The Google Map API can return up to 20 results with next page token if there are more than 20 results. (ref: [_here_](https://developers.google.com/maps/documentation/places/web-service/search-nearby)) Therefore, the developer need to use next page token to get 20 more results (with another next page token if possible). The issue is the short delay before the developer can send a new request to the API. So, it might take some seconds for searching new restaurants list.
 > In this application, I apply 2 seconds delay time before getting next 20 results.
 
 ## Directory Layout
