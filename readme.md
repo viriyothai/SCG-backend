@@ -9,7 +9,7 @@
 - Redis
 - Clean architecture
 
-## Installation Guided
+## Installation Guide
 
 - clone the project
 - set the Google map API key in .env file
@@ -27,18 +27,23 @@ long: number # geolocation of the area you want to search for nearby restaurants
 keyword: string # keyword to search by name of the restaurants
 }
 
+## Limitation
+
+> The Google Map API can return up to 20 results with next page token if there are more than 20 results. Therefore, the developer need to use next page token to get 20 more results (with another next page token if possible). The issue is the short delay before the developer can send a new request to the API. So, it might take some seconds for searching new restaurants list.
+> In this application, I apply 2 seconds delay time before getting next 20 results.
+
 ## Directory Layout
 
-.
-├── adapters # to convert imcoming data into the application format data and to implement services  
-│ ├── controllers
-│ ├── services
-├── application # to set the application business rules and use case
-│ ├── repositories
-│ ├── use-cases
-├── config # to set configuration information
-├── frameworks # outer layer for database connection, server connection, imported services
-│ ├── databases
-│ ├── services
-│ ├── webserver
-└── README.md
+    .
+    ├── adapters # to convert imcoming data into the application format data and to implement services  
+    │  ├── controllers
+    │  └── services
+    ├── application # to set the application business rules and use case
+    │  ├── repositories
+    │  └── use-cases
+    ├── config # to set configuration information
+    ├── frameworks # outer layer for database connection, server connection, imported services
+    │  ├── databases
+    │  ├── services
+    │  └── webserver
+    └── README.md
